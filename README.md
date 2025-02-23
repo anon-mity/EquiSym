@@ -6,6 +6,10 @@ SO(3) equivariant models provide excellent pose representations for tasks such a
 2.Download[ShapeNet](https://condor-datasets.s3.us-east-2.amazonaws.com/dataset/ShapeNetAtlasNetH5_1024.zip), and place it in the following directory: `datasets/ShapeNetAtlasNetH5_1024/`.
 3.Download[ScanObjectNN](ScanObjectNN), and place it in the following directory: `datasets/ScanObjectNN`.
 
+# Environment Preparation
+We tested the code on pytorch1.10 (cuda11.1).
+`pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html`
+
 # Usage
 ## Single-Category Training/Testing
 ```bash
