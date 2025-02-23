@@ -1,9 +1,27 @@
 # EquiSym
 
+# Data Preparation
+1.Download[ModelNet40](https://shapenet.cs.stanford.edu/media/modelnet40_normal_resampled.zip), and place it in the following directory:  `datasets/modelnet40_normal_resampled/`.
+2.Download[ShapeNet](https://condor-datasets.s3.us-east-2.amazonaws.com/dataset/ShapeNetAtlasNetH5_1024.zip), and place it in the following directory: `datasets/ShapeNetAtlasNetH5_1024/`.
+3.Download[ScanObjectNN](ScanObjectNN), and place it in the following directory: `datasets/ScanObjectNN`.
 
-# 数据准备
-1.下载[ModelNet40](https://shapenet.cs.stanford.edu/media/modelnet40_normal_resampled.zip)，然后放到该目录下 (datasets/modelnet40_normal_resampled/)
-2.下载[ShapeNet]
+# Usage
+## Single-Category Training/Testing
+```bash
+python train_pose.py --model $optional$ --data_choice shapenet
+python test_pose.py --model $optional$ --data_choice shapenet
+```
+## Multi-Category Training/Testing
+```bash
+python train_pose.py --model $optional$ --data_choice modelnet
+python test_pose.py --model $optional$ --data_choice modelnet
+```
+## Real-World Data Training/Testing
+```bash
+python train_pose.py --model $optional$ --data_choice scanobject
+python test_pose.py --model $optional$ --data_choice modelnet
+```
+Here, `$optional$` can be one of the following: `vn_pointnet`, `vn_dgcnn`, `vn_transformer`, `vn_pointnet_am`, `vn_dgcnn_am`, `vn_transformer_am`. The suffix `_am` indicates that our method was used.
 
 
 # Acknowledgement
