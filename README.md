@@ -1,4 +1,5 @@
-# EquiSym
+# EquiSym: Learning Equivariant Representations of Vector Neurons without Self-Symmetry Ambiguity
+SO(3) equivariant models provide excellent pose representations for tasks such as pose estimation, which involve rotation group asymmetries. However, input objects with self-symmetry introduce additional symmetry, causing the equivariant representations to exhibit zero-valued components along symmetric directions, thereby introducing ambiguities in neural network training. In this work, we address this issue by inserting a non-zero guidance term into the equivariant function. Under the Vector Neuron (VN) framework, we propose the Learnable Special Orthogonal Group (LSOG) and Separable Linear Layers (SLL) to construct the non-zero guidance term.
 
 # Data Preparation
 1.Download[ModelNet40](https://shapenet.cs.stanford.edu/media/modelnet40_normal_resampled.zip), and place it in the following directory:  `datasets/modelnet40_normal_resampled/`.
@@ -22,6 +23,9 @@ python train_pose.py --model $optional$ --data_choice scanobject
 python test_pose.py --model $optional$ --data_choice modelnet
 ```
 Here, `$optional$` can be one of the following: `vn_pointnet`, `vn_dgcnn`, `vn_transformer`, `vn_pointnet_am`, `vn_dgcnn_am`, `vn_transformer_am`. The suffix `_am` indicates that our method was used.
+
+# License
+MIT License
 
 
 # Acknowledgement
